@@ -11,7 +11,7 @@ class MediaController extends Controller
     // GET /api/media
     public function index()
     {
-        $media = Media::all()->map(function($item){
+        $media = Media::orderBy('releaseDate', 'desc')->get()->map(function ($item) {
             $item->image_url = url('storage/' . $item->image_path);
             return $item;
         });
@@ -27,6 +27,9 @@ class MediaController extends Controller
         if (!$media) {
             return response()->json(['message' => 'Media not found'], 404);
         }
+
+        // Adiciona a URL da imagem
+        $media->image_url = url('storage/' . $media->image_path);
 
         return response()->json($media);
     }

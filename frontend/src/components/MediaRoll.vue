@@ -9,6 +9,7 @@
         <img
           :src="media.image_url"
           :alt="media.name"
+          @click="selectedMedia.selectMedia(media.id)"
           class="w-full h-64 object-cover rounded-lg transition-transform duration-300 hover:scale-110 cursor-pointer"
         />
         <h3 class="mt-2 text-center font-semibold text-white text-lg">{{ media.name }}</h3>
@@ -19,6 +20,11 @@
 
 <script setup>
 import { defineProps } from 'vue'
+import { useSelectedMediaStore } from '@/stores/selectedMedia';
+
+const selectedMedia = useSelectedMediaStore();
+
+
 
 const props = defineProps({
   mediaList: {
