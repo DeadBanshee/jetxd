@@ -5,15 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Media extends Model
+class Membership extends Model
 {
     use HasFactory;
+    
+    protected $table = 'membership_plans';
 
     protected $fillable = [
-        'name',
-        'releaseDate',
-        'hasEpisodes',
-        'image_path',
+        'title',
+        'value',
+        'stripe_id',
+        'description',
     ];
 
 }

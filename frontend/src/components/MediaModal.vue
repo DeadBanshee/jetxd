@@ -1,7 +1,7 @@
 <template>
   <div class="fixed inset-0 bg-black/60 flex justify-center items-center z-50">
     <div class="relative bg-slate-800 text-white p-6 rounded-xl w-full max-w-md shadow-2xl">
-      <button class="bg-red-500 rounded-2xl px-3 py-1" @click="select.resetState()">X</button>
+      <button class="bg-red-500 rounded-2xl font-semibold px-3 py-1" @click="select.resetState()">X</button>
       <!-- <p>{{ select.selectedMedia }}</p> -->
       <p>{{ select.selectedMedia.name }}</p>
         <img

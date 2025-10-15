@@ -8,6 +8,8 @@
     <MediaRoll v-if="mediaList.length" :mediaList="mediaList" title="New Series" />
     <MediaRoll v-if="mediaList.length" :mediaList="mediaList" title="Recommended for You" />
 
+
+
   </div>
 </template>
 
