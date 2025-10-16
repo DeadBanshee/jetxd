@@ -17,4 +17,8 @@
 
 ---
 
-## 🧠 Estrutura do Projeto
+## 🧠 COMO USAR
+1 -> npm install
+2 -> composer install
+3 -> altere o env com as credenciais de api da Stripe
+4 -> Com a cli do stripe baixado, utilizar: stripe listen --forward-to http://localhost:8000/api/stripe/webhook (ou para qualquer que seja sua rota)
