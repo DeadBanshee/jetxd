@@ -43,14 +43,14 @@
             <RouterLink to="/" class="block py-2 px-3 text-white bg-blue-700 rounded-sm md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Home</RouterLink>
           </li>
 
-          <li>
+          <!-- <li>
                   <button
                     @click="ping"
                     class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg"
                   >
                     Test Auth Ping
                   </button>
-          </li>
+          </li> -->
 
           <li>
             

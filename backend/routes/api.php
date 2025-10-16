@@ -46,8 +46,10 @@ Route::post('user/signUp', [UserController::class, 'signup']);
 //MEMBESHIP ROUTES
 Route::get('/membership', [MembershipController::class, 'index']);
 
-Route::middleware(['jwt.auth'])->group(function () {
-    Route::post('/membership/subscribe', [MembershipController::class, 'subscribe']);
-});
+Route::middleware(['jwt.auth'])->post('/membership/subscribe', [MembershipController::class, 'subscribe']);
+
+Route::middleware(['jwt.auth'])->post('/membership/confirm', [MembershipController::class, 'confirm']);
+
+Route::post('/stripe/webhook', [MembershipController::class, 'webhook']);
 
 Route::middleware(['jwt.auth'])->get('/ping', [UserController::class, 'ping']);

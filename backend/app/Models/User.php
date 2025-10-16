@@ -24,6 +24,11 @@ class User extends Authenticatable implements JWTSubject
         return [];
     }
 
+    public function membershipPlan()
+    {
+        return $this->belongsTo(Membership::class, 'membership_plan_id');
+    }
+
     /**
      * The attributes that are mass assignable.
      *

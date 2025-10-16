@@ -18,7 +18,7 @@
 
       <!-- Botão de Assinar (opcional) -->
       <div class="mt-6 flex justify-center">
-        <button
+        <button @click="startSubscribe(plan.stripe_id)"
           class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded-full shadow-md transition-colors duration-300 cursor-pointer"
         >
           Subscribe
@@ -37,6 +37,11 @@ import { useMembershipStore } from '@/stores/membershipStore';
 const userStore = useUserStore();
 
 const membershipStore = useMembershipStore();
+
+const startSubscribe = async(price_id) =>{
+  const res = await membershipStore.subscribe(price_id)
+  window.location.href = res.url
+}
 
 
 onMounted(async () => {
