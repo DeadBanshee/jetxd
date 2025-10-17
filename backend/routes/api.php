@@ -36,6 +36,8 @@ Route::get('/media/search', [MediaController::class, 'search']);
 
 Route::get('/media/{id}', [MediaController::class, 'show']);
 
+Route::middleware(['jwt.auth'])->get('/media/stream/{id}', [MediaController::class, 'stream']);
+Route::get('/media/stream/{id}', [MediaController::class, 'stream']);
 
 //USER ROUTES
 Route::post('user/login', [UserController::class, 'login']);
@@ -53,3 +55,4 @@ Route::middleware(['jwt.auth'])->post('/membership/confirm', [MembershipControll
 Route::post('/stripe/webhook', [MembershipController::class, 'webhook']);
 
 Route::middleware(['jwt.auth'])->get('/ping', [UserController::class, 'ping']);
+

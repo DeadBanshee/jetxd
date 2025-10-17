@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia'
 import axios from 'axios'
+import { useUserStore } from './userStore'
 
 export const useSelectedMediaStore = defineStore('selectedMedia', {
   state: () => ({
@@ -17,6 +18,18 @@ export const useSelectedMediaStore = defineStore('selectedMedia', {
         return false
       }
     },
+    async stream(id){
+
+        const userStore = useUserStore();
+
+        const res = await axios.get(`http://localhost:8000/api/media/stream/${id}`, {
+          headers: { Authorization: `Bearer ${userStore.userToken}` },
+          responseType: 'blob', // importante!
+        });
+
+        return res.data;
+    },
+
     resetState(){
         this.selectedMedia = null;
         localStorage.removeItem('selectedMedia');

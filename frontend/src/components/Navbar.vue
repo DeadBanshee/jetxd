@@ -59,7 +59,11 @@
               <span class="rounded-md shadow-sm"
                 ><button class="block py-2 px-3 cursor-pointer text-white bg-blue-700 rounded-sm md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" 
                 type="button" aria-haspopup="true" aria-expanded="true" aria-controls="headlessui-menu-items-117">
-                  <span>Profile</span>
+
+                  <div class="flex items-center">
+                    <span>Profile <img v-if="userStore.user.membership_plan_id != 0" class="h-5 ml-2 inline-block" src="/crown.png"></img></span>
+                  </div>
+
                   </button>
               </span>
 
