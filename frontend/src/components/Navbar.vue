@@ -61,7 +61,15 @@
                 type="button" aria-haspopup="true" aria-expanded="true" aria-controls="headlessui-menu-items-117">
 
                   <div class="flex items-center">
-                    <span>Profile <img v-if="userStore.user.membership_plan_id != 0" class="h-5 ml-2 inline-block" src="/crown.png"></img></span>
+                    <span>
+                    Profile
+                    <img
+                      v-if="userStore.user?.membership_plan_id != null"
+                      class="h-5 ml-2 inline-block"
+                      src="/crown.png"
+                      alt="Premium user"
+                    >
+                  </span>
                   </div>
 
                   </button>

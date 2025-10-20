@@ -34,8 +34,8 @@
         <div class="flex space-x-3 mt-4">
           <button 
             class="bg-white text-black font-semibold px-6 py-2 rounded-md hover:bg-gray-300 transition"
-            @click="select.stream(select.selectedMedia.id)"
-          >
+            @click="goToWatch(select.selectedMedia.id)"
+          > <!-- select.stream(select.selectedMedia.id) -->
 
             <div class="play-btn">
               <a href="#">
@@ -61,8 +61,14 @@
 
 <script setup>
 import { useSelectedMediaStore } from '@/stores/selectedMedia'
+import router from '@/router'
 
 const select = useSelectedMediaStore()
+
+const goToWatch = (id) =>{
+  router.push(`/watch/${id}`)
+}
+
 </script>
 
 <style scoped>

@@ -28,9 +28,11 @@ const selectedMedia = useSelectedMediaStore();
 const userStore = useUserStore();
 
 const handleClick = (media_id) => {
-  if(userStore.user.membership_plan_id != 0){
-    selectedMedia.selectMedia(media_id)
-  }else{
+  const membershipId = userStore.user?.membership_plan_id || 0; // evita erro
+
+  if (membershipId !== 0) {
+    selectedMedia.selectMedia(media_id);
+  } else {
     router.push('/membership');
   }
 }

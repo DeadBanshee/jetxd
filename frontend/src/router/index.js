@@ -4,6 +4,7 @@ import Login from '../views/login.vue'
 import Profile from '../views/profile.vue'
 import Membership from '../views/membership.vue'
 import MembershipSucces from '../views/membershipSuccess.vue'
+import WatchView from '../views/WatchView.vue'
 
 const routes = [
   { path: '/', name: 'Home', component: Home },
@@ -11,6 +12,7 @@ const routes = [
   { path: '/profile', name: 'Profile', component: Profile },
   { path: '/membership', name: 'Membership', component: Membership },
   { path: '/membershipSuccess', name: 'MembershipSuccess', component: MembershipSucces },
+  { path: '/watch/:id', name: 'WatchView', component: WatchView },
 ]
 
 const router = createRouter({

@@ -18,16 +18,20 @@ export const useSelectedMediaStore = defineStore('selectedMedia', {
         return false
       }
     },
-    async stream(id){
+    async stream(id) {
+      const userStore = useUserStore();
 
-        const userStore = useUserStore();
-
+      try {
         const res = await axios.get(`http://localhost:8000/api/media/stream/${id}`, {
           headers: { Authorization: `Bearer ${userStore.userToken}` },
-          responseType: 'blob', // importante!
+          responseType: 'blob',
         });
-
+        console.log(res.data);
         return res.data;
+      } catch (err) {
+        console.error('STREAM ERROR:', err.response?.status, err.response?.data);
+        throw err;
+      }
     },
 
     resetState(){
