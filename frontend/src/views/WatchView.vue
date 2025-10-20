@@ -1,5 +1,5 @@
 <template>
-  <div class="fixed inset-0 bg-black flex items-center justify-center">
+  <div class="fixed inset-0 bg-black flex items-center justify-center z-50">
     <video
       v-if="videoUrl"
       :src="videoUrl"

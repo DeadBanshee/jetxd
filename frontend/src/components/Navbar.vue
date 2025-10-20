@@ -54,7 +54,7 @@
 
           <li>
             
-            <div class="z-50 relative inline-block text-left dropdown">
+            <div class="z-40 relative inline-block text-left dropdown">
 
               <span class="rounded-md shadow-sm"
                 ><button class="block py-2 px-3 cursor-pointer text-white bg-blue-700 rounded-sm md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" 
@@ -116,7 +116,7 @@
 
 
 
-<div v-if="searchQuery && results.length" class="absolute left-1/2 transform -translate-x-1/2 mt-4 z-50 w-full max-w-4xl px-4">
+<div v-if="searchQuery && results.length" class="absolute left-1/2 transform -translate-x-1/2 mt-4 z-40 w-full max-w-4xl px-4">
   <div class="bg-gray-900/90 backdrop-blur-sm rounded-2xl shadow-2xl border border-gray-700">
     <h2 class="text-lg font-semibold text-white px-6 pt-4">Results:</h2>
 
